@@ -1,0 +1,79 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>register here!</title>
+     <script src="{% static 'js/dynamic.js' %}"></script>
+
+
+</head>
+<body>
+{% block content %}
+
+  <h2 style="background-color:orange;">Donor Form</h2>
+  <form action="bloodForm" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your name"><br>
+
+    <input type="number" name="age" placeholder="Enter your age"><br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="text" name="address" placeholder="Enter your Address"><br>
+     <select id="a" name="district">
+  <option value="1" data-sync="1">thrissur</option>
+  <option value="2" data-sync="2">ernakulam</option>
+  <option value="3" data-sync="3">kozhikode</option>
+  <option value="4" data-sync="4">kannur</option>
+  <option value="5" data-sync="5">trivandrum</option>
+   </select>
+  <select id="b">
+  <option value="1">jubilee mission hospital</option>
+  <option value="2">general hospital</option>
+      <option value="3">aster_MIMS</option>
+      <option value="4">district hospital</option>
+      <option value="5">s u t hospital</option>
+</select>
+
+</div>
+
+
+
+
+      <br>
+
+
+    <input type="text" name="blood group" list="blood group list">
+     <datalist id="blood group list">
+         <option value>--select bloodgroup--</option>
+         <option value="A+">
+         <option value="B+">
+         <option value="O+">
+         <option value="AB+">
+         <option value="AB-ve">
+         <option value="O-ve">
+         <option value="A-ve">
+    </datalist><br>
+
+    <input type="text" name="phone number" placeholder="Enter your phonenumber"><br>
+
+
+      <input type="submit" class="btn btn-outline-primary btn-sm" value="Registered">
+      <div>
+     {% for message in messages %}
+      <h3> {{message}} </h3>
+      {% endfor %}
+      </div>
+     </form>
+
+
+      <a href="{% url 'base' %}">
+      <input type="submit" class="btn btn-outline-primary btn-sm" value="Log Out">
+    </a>
+        <a href="{% url 'base' %}">Home</a>
+      <img src="{% static 'img/pic2.png' %}" alt="" height="500" width="100%">
+
+
+</body>
+{% endblock %}

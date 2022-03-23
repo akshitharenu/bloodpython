@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+</head>
+<body>
+{% block content %}
+<h2 style="background-color:dodgerblue;">Registration</h2>
+  <form action="registerView" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="enter your name"><br>
+    <input type="email" name="email" placeholder="enter your mail-id"><br>
+    <input type="password" name="password" placeholder="enter your password"><br>
+    <input type="password" name="confirm password" placeholder="enter your  confirm password"><br>
+
+    <a href="{% url 'blood form' %}">
+      <input type="submit" class="btn btn-outline-primary btn-sm" value="Enter">
+    </a>
+
+
+
+
+    <img src="{% static 'img/pic1.png' %}" alt="" height="450;" width="100%">
+  <h2><center>DONATE BLOOD SAVE LIFE</center></h2>
+  </form>
+</body>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %} {% endblock %}</title>
+</head>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <script src="{% static 'js/popper.min.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div style="background-color:tomato;"class="container-fluid">
+    <a class="navbar-brand" href="#">BLOOD DONATION</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'base' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            District
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Aster_MIMS">Kannur</a></li>
+            <li><a class="dropdown-item" href="https://www.healthfrog.in/laboratory/blood-banks/kerala/ernakulam">Ernakulam</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Jubilee_Mission_Medical_College_and_Research_Institute">Thrissur</a></li>
+            <li><a class="dropdown-item" href="https://www.healthfrog.in/laboratory/blood-banks/kerala/malappuram">Calicut</a></li>
+            <li><a class="dropdown-item" href="https://www.healthfrog.in/laboratory/blood-banks/kerala/trivandrum">Trivandrum</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Aster_MIMS">Kozhikode</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<body>
+<div>
+
+    <a href="{% url 'login' %}">
+      <input type="submit" class="btn btn-outline-primary btn-sm" value="BLOOD DONATIONS">
+    </a>
+
+   <img src="{% static 'img/banner.png' %}" alt="" height="800" width="100%">
+</div>
+
+</body>
+{% endblock %}
+</html>
